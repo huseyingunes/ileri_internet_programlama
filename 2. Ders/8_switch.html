@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="baslik"></h1>
+    <p id="cikti"></p>
+    <script>
+        const mevsim = {
+            ilkbahar : 1,
+            yaz : 2,
+            sonbahar : 3,
+            kis : 4
+        }
+        let simdiki_mevsim = mevsim.ilkbahar;
+        switch(simdiki_mevsim)
+        {
+            case mevsim.ilkbahar : 
+                console.log("Mevsim ilkbaharmış");
+                break;
+            
+            case mevsim.yaz:
+                console.log("Mevsim yazmış");
+                break;
+        }
+    </script>
+</body>
+</html>

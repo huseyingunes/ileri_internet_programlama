@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Deneme</p>
+    <p id="isim">Hüseyin</p>
+    <p class="asd">Civa</p>
+    <p class="asd">Palamut</p>
+    <h3 class="asd">Başlık</h3>
+    <script>
+        let isim = document.getElementById("isim");
+        isim.innerHTML = "asdfasdf";
+        let asds = document.getElementsByClassName("asd");
+        console.log(asds);
+        Array.from(asds).forEach((asd) => {
+            asd.style.color = "red";
+        });
+        let asd_paragraflar = document.querySelectorAll("p.asd");
+        Array.from(asd_paragraflar).forEach((asd_paragraf) => {
+            asd_paragraf.style.textDecoration = "underline";
+        });
+
+    </script>
+</body>
+
+</html>

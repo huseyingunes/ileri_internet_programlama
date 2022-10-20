@@ -1,0 +1,60 @@
+<!--
+    Bir düğmeye tıklandığında
+    10*10 luk bir tablo oluşturan
+    ve bu tablonun her hücresinde 
+    rastgele bir arka plan rengi uygulayan
+    kodu yazınız.
+    Her hücrede rengin kodu da yazmalıdır.
+    Hücredeki yazılarda belirlenen 5 adet fonttan
+    rastgele 1 tanesi olsun.
+    Bu fontlar google fontlar arasından kendinizin 
+    seçip belirlediği fontlar olsun.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Montserrat&family=Open+Sans&family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button onclick="tabloOlustur()">Tablo oluştur</button>
+    <div id="container"></div>
+    <script>
+        const fontFamilies = ["Alkalami", "Montserrat", "Open Sans", "Roboto", "Roboto Mono"]
+        function tabloOlustur(){
+            const table = document.createElement("table");
+            const tbody = document.createElement("tbody");
+            table.appendChild(tbody);
+
+            const TABLE_ROW = 10;
+            const TABLE_COLUMN = 10;
+
+            for(let i = 0;i < TABLE_ROW;i++){
+                let tr = document.createElement("tr");
+
+                for(let i = 0;i < TABLE_COLUMN;i++){
+                    const td = document.createElement("td");
+                    let kirmizi = Math.floor(Math.random() * 255);
+                    let yesil = Math.floor(Math.random() * 255);
+                    let mavi = Math.floor(Math.random() * 255);
+
+                    td.innerText = `${kirmizi}, ${yesil}, ${mavi}`;
+                    td.style.backgroundColor = `rgb(${kirmizi},${yesil},${mavi})`;
+                    td.style.fontFamily = fontFamilies[Math.floor(Math.random() * fontFamilies.length)];
+                    tr.appendChild(td);
+                }
+
+                tbody.appendChild(tr);
+            }
+
+            document.getElementById("container").appendChild(tbody);
+        }
+    </script>
+</body>
+</html>

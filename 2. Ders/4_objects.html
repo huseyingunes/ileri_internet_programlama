@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="baslik"></h1>
+    <p id="cikti"></p>
+    <script>
+        let a = 5;
+        const nesne = {
+            a:6, 
+            b:7, 
+            c:"deneme", 
+            dizi:[1, 2, 3],
+            calistir:function(aa, bb){
+                document.getElementById("baslik").innerHTML = this.c;
+                document.getElementById("cikti").innerHTML = this.a 
+                + aa 
+                + 
+                bb;
+            },
+            zzz:"sdfsdf"
+        }
+        nesne.calistir(3, 5);
+    </script>
+</body>
+</html>
