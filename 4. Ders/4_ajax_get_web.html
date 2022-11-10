@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="getir">Getir de Getirelim</button>
+    <div id="icerik"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $("#getir").click(function () {
+            $.get("http://localhost:3000/ajax", function (data, status) {
+                $("#icerik").html(data);
+            });
+        });
+    </script>
+</body>
+
+</html>
