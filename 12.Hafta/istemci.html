@@ -1,0 +1,25 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.io Sohbet Uygulaması</title>
+  </head>
+  <body>
+    <form id="form">
+      <input type="text" id="message" placeholder="Mesajınızı yazın">
+      <button type="submit">Gönder</button>
+    </form>
+    <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+    <script>
+      const socket = io('http://75.119.138.124:3000');
+
+      const form = document.getElementById('form');
+      const messageInput = document.getElementById('message');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        socket.emit('sendMessage', messageInput.value);
+      });
+    </script>
+  </body>
+</html>
