@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        hex2 = '#ff007f'
+
+        console.log(hex2.match(/\w\w/g))
+        const hexToRgba = hex => {
+            const [r, g, b] = hex.match(/\w\w/g).map(val => parseInt(val, 16))
+            return `rgba(${r}, ${g}, ${b}, 1)`;
+        }
+
+        hexToRgba('#000000') // rgba(0, 0, 0, 1)
+        console.log(hexToRgba('#ff007f')) // rgba(255, 0, 127, 1)
+    </script>
+</body>
+
+</html>

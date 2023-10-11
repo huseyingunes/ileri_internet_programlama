@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const rgbToHex = (r, g, b) => "#" + [r, g, b].map(num => parseInt(num).toString(16).padStart(2, '0')).join('')
+
+        rgbToHex(0, 0, 0) // #000000
+        rgbToHex(255, 0, 127) //#ff007f
+        console.log(rgbToHex(255, 0, 127))
+    </script>
+</body>
+
+</html>
