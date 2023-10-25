@@ -1,0 +1,64 @@
+<!-- 
+    Kaynak : https://jsonplaceholder.typicode.com/todos/1
+    Boş bir liste oluşturun. (Ordered List)
+    Sayfa yüklendikten sonra:
+        Bu kaynaktan ilk kaydı çekerek bunu listeye ekleyin.
+        Liste öğesi içeriği title olsun.
+    Sayfanıza bir düğme ekleyin.
+    Bu düğmeye her tıklandığında listeye bir sonraki kaynağı 
+        /todos/2 /todos/3 ...
+        ekleyin.
+    Lsitedeki her elemanın üstüne gelince:
+        Elemanın sağında bir sil düğmesi çıksın.
+            Elemanın üstünde çıkınca sil düğmesi yok olsun.
+        Bu sil düğmesine tıklanınca o liste öğesi silinsin.
+    
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ol id="liste">
+
+    </ol>
+    <button id="dgm">Ekle</button>
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var sayac = 2
+            $.get("https://jsonplaceholder.typicode.com/todos/1", function (data, status) {
+                $("#liste").append("<li>" + data.title + "</li>")
+            })
+
+            $("#dgm").click(() => {
+                $.get("https://jsonplaceholder.typicode.com/todos/" + sayac, function (data, status) {
+                    $("#liste").append("<li>" + data.title + "</li>")
+                    sayac++
+                })
+            })
+
+            $(document).on("mouseenter", "li", (oge) => {
+                //$(oge.target).css("background-color", "black");
+                $(oge.target).append(
+                    "<button id='sil'>Sil</button>"
+                )
+            })
+            $(document).on("mouseleave", "li", (oge) => {
+                $("#sil").remove()
+            })
+
+            $(document).on("click", "#sil", (oge) => {
+                $(oge.target).parent().remove()
+            })
+        })
+    </script>
+
+</body>
+
+</html>

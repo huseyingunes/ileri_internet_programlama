@@ -14,8 +14,11 @@
     <script src="jquery-3.6.1.min.js"></script>
     <script>
         $("#getir").click(function () {
-            $.get("http://localhost:3000", function (data, status) {
-                alert("Data: " + data + "\nStatus: " + status);
+            $.get("https://jsonplaceholder.typicode.com/todos/1", function (data, status) {
+                //alert("Data: " + data + "\nStatus: " + status);
+                console.log(data);
+                console.log(data.id);
+                console.log(data.title);
             });
         });
     </script>

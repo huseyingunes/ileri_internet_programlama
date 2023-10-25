@@ -2,5 +2,6 @@
   "dependencies": {
     "kodaman": "^0.1.6",
     "upper-case": "^2.0.2"
-  }
+  },
+  "type": "module"
 }
